@@ -1,10 +1,14 @@
 {
-    "name": "martinlindhe/laravel-vue-i18n-generator",
+    "name": "flopreyser/laravel-vue-i18n-generator",
     "license": "MIT",
     "description": "Generates a vue-i18n compatible include file from your Laravel translations.",
     "keywords": ["laravel","vue-i18n"],
     "homepage": "http://github.com/martinlindhe/laravel-vue-i18n-generator",
     "authors": [
+        {
+            "name": "Flo Preyser",
+            "email": "flo.preyser@live.at"
+        },
         {
             "name": "Martin Lindhe",
             "email": "martin@ubique.se"
