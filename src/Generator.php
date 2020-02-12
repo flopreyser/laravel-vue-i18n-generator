@@ -186,7 +186,7 @@ class Generator
      * @param string $path
      * @return array
      */
-    private function allocateLocaleJSON($path)
+    public function allocateLocaleJSON($path)
     {
         // Ignore non *.json files (ex.: .gitignore, vim swap files etc.)
         if (pathinfo($path, PATHINFO_EXTENSION) !== 'json') {
@@ -204,7 +204,7 @@ class Generator
      * @param string $path
      * @return array
      */
-    private function allocateLocaleArray($path, $multiLocales = false)
+    public function allocateLocaleArray($path, $multiLocales = false)
     {
         $data = [];
         $dir = new DirectoryIterator($path);
