@@ -261,7 +261,7 @@ class Generator
      * @param string $noExt
      * @return boolean
      */
-    private function shouldIgnoreLangFile($noExt)
+    protected function shouldIgnoreLangFile($noExt)
     {
         // langFiles passed by option have priority
         if (isset($this->langFiles) && !empty($this->langFiles)) {
@@ -276,7 +276,7 @@ class Generator
      * @param array $arr
      * @return array
      */
-    private function adjustArray(array $arr)
+    public function adjustArray(array $arr)
     {
         $res = [];
         foreach ($arr as $key => $val) {
@@ -298,7 +298,7 @@ class Generator
      *
      * @return array
      */
-    private function adjustVendor($locales)
+    public function adjustVendor($locales)
     {
         if (isset($locales['vendor'])) {
             foreach ($locales['vendor'] as $vendor => $data) {
@@ -321,7 +321,7 @@ class Generator
      * @param string $s
      * @return string
      */
-    private function adjustString($s)
+    public function adjustString($s)
     {
         if (!is_string($s)) {
             return $s;
@@ -350,7 +350,7 @@ class Generator
      * @param string $s
      * @return string
      */
-    private function removeEscapeCharacter($s)
+    public function removeEscapeCharacter($s)
     {
         $escaped_escape_char = preg_quote($this->config['escape_char'], '/');
         return preg_replace_callback(
@@ -367,7 +367,7 @@ class Generator
      * @param string $filename
      * @return string
      */
-    private function removeExtension($filename)
+    protected function removeExtension($filename)
     {
         $pos = mb_strrpos($filename, '.');
         if ($pos === false) {
@@ -382,7 +382,7 @@ class Generator
      * @param string $body
      * @return string
      */
-    private function getUMDModule($body)
+    protected function getUMDModule($body)
     {
         $js = <<<HEREDOC
 (function (global, factory) {
@@ -401,7 +401,7 @@ HEREDOC;
      * @param string $body
      * @return string
      */
-    private function getES6Module($body)
+    protected function getES6Module($body)
     {
         return "export default {$body}";
     }
